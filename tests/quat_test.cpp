@@ -73,12 +73,14 @@ TEST_F(quat_tests, construction)
 
 TEST_F(quat_tests, index_picking)
 {
-	{	// position pick
+	{	// non-constant
 		auto probe = FQuat();
 		ASSERT_EQ(0, probe[0]);
 		ASSERT_EQ(0, probe[1]);
 		ASSERT_EQ(0, probe[2]);
 		ASSERT_EQ(1, probe[3]);
+		EXPECT_ANY_THROW(probe[ 4]);
+		EXPECT_ANY_THROW(probe[-1]);
 	}
 	{	// constant
 		const auto probe = FQuat();
@@ -86,5 +88,25 @@ TEST_F(quat_tests, index_picking)
 		ASSERT_EQ(0, probe[1]);
 		ASSERT_EQ(0, probe[2]);
 		ASSERT_EQ(1, probe[3]);
+		EXPECT_ANY_THROW(probe[4]);
+		EXPECT_ANY_THROW(probe[-1]);
+	}
+	{	// pre-defined values
+		auto probe = FQuat(1, 2, 3, 4);
+		ASSERT_EQ(1, probe[0]);
+		ASSERT_EQ(2, probe[1]);
+		ASSERT_EQ(3, probe[2]);
+		ASSERT_EQ(4, probe[3]);
+	}
+}
+
+TEST_F(quat_tests, complex_rotations)
+{
+	{	// roll -> pitch
+		auto A1 = FQuat(90, 0, 0);
+		auto A2 = FQuat(0, 90, 0);
+		auto AR = A2 * A1;
+		auto AE = FQuat({1, 1, -1}, 90);
+		Compare(AE, AR);
 	}
 }

@@ -167,6 +167,37 @@ namespace Math
 			Clamp(v.y, min, max),
 			Clamp(v.z, min, max)};
 	}
+
+	template<typename T, typename Q>
+	T Cos(const TVector<T> a, const TVector<Q> b)
+	{
+		auto product = (a * b).Sum();
+		auto anorm2 = a.Size2();
+		auto bnorm2 = b.Size2();
+		return product / anorm2 / bnorm2;
+	}
+
+	template<typename T, typename Q>
+	T Sin(const TVector<T> a, const TVector<Q> b)
+	{
+		auto product = (a ^ b).Sum();
+		auto anorm2 = a.Size2();
+		auto bnorm2 = b.Size2();
+		return product / anorm2 / bnorm2;
+	}
+
+	template<typename T, typename Q>
+	T Angle2(const TVector<T> a, const TVector<Q> b)
+	{
+		auto cos = Cos(a, b);
+		auto sin = Sin(a, b);
+		auto angle = Acos(cos);
+		if (sin >= 0)
+		{
+			return angle;
+		}
+		return 2 * PI - angle;
+	}
 }
 
 

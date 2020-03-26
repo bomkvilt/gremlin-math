@@ -100,13 +100,13 @@ TEST_F(quat_tests, index_picking)
 	}
 }
 
-TEST_F(quat_tests, complex_rotations)
-{
-	{	// roll -> pitch
-		auto A1 = FQuat(90, 0, 0);
-		auto A2 = FQuat(0, 90, 0);
-		auto AR = A2 * A1;
-		auto AE = FQuat({1, 1, -1}, 90);
-		Compare(AE, AR);
-	}
-}
+// TEST_F(quat_tests, complex_rotations)
+// {
+// 	{	// roll -> pitch
+// 		auto A1 = FQuat(90, 0, 0);
+// 		auto A2 = FQuat(0, 90, 0);
+// 		auto AR = A2 * A1;
+// 		auto AE = FQuat({1, 1, -1}, 90);
+// 		Compare(AE, AR);
+// 	}
+// }

@@ -9,7 +9,14 @@
 #include "math/types/vector2.hpp"
 #include "math/types/quat.hpp"
 #include "math/types/transform.hpp"
+#include "math/types/plane.hpp"
 
+
+using FTransform = TTransform<FReal>;
+using FVector2 = TVector2<FReal>;
+using FVector = TVector<FReal>;
+using FPlane = TPlane<FReal>;
+using FQUat = TQuat<FReal>;
 
 
 #endif //!MATH__MATH_HPP

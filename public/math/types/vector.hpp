@@ -172,18 +172,18 @@ namespace Math
 	T Cos(const TVector<T> a, const TVector<Q> b)
 	{
 		auto product = (a * b).Sum();
-		auto anorm2 = a.Size2();
-		auto bnorm2 = b.Size2();
-		return product / anorm2 / bnorm2;
+		auto anorm = a.Size();
+		auto bnorm = b.Size();
+		return product / anorm / bnorm;
 	}
 
 	template<typename T, typename Q>
 	T Sin(const TVector<T> a, const TVector<Q> b)
 	{
 		auto product = (a ^ b).Sum();
-		auto anorm2 = a.Size2();
-		auto bnorm2 = b.Size2();
-		return product / anorm2 / bnorm2;
+		auto anorm = a.Size();
+		auto bnorm = b.Size();
+		return product / anorm / bnorm;
 	}
 
 	template<typename T, typename Q>

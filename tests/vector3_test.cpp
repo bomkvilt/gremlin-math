@@ -22,4 +22,5 @@ TEST_F(vec3_tests, angle2)
 		auto f = Math::Angle2(a, b);
 		ASSERT_FLOAT_EQ(RAD2DEG(f),270);
 	}
+	// \todo: test vectors with 2 non-zero coordinates
 }

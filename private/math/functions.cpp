@@ -13,6 +13,8 @@ namespace Math
 	double Sin(double x) 				{ return sin (x); 		}
 	float  Tan(float  x) 				{ return tanf(x); 		}
 	double Tan(double x) 				{ return tan (x); 		}
+	float  Cot(float  x) 				{ return 1 / tanf(x); 	}
+	double Cot(double x) 				{ return 1 / tan (x); 	}
 
 	float  Acos(float  x) 				{ return acosf(x); 		}
 	double Acos(double x) 				{ return acos (x); 		}
@@ -29,4 +31,6 @@ namespace Math
 	float  Min(float  x, float  y) 		{ return fminf(x, y); 	}
 	double Max(double x, double y) 		{ return std::max(x, y); }
 	double Min(double x, double y) 		{ return std::min(x, y); }
+	float  Avg(float  x, float  y)		{ return x / 2 + y / 2; }
+	double Avg(double x, double y)		{ return x / 2 + y / 2; }
 }

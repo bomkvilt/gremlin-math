@@ -9,8 +9,8 @@ namespace Math
 {
 	// constants
 	
-	constexpr FReal PI      = static_cast<FReal>(3.141593);
-	constexpr FReal EPSILON = static_cast<FReal>(1e-05);
+	constexpr FReal Pi      = static_cast<FReal>(3.141593);
+	constexpr FReal Epsilon = static_cast<FReal>(1e-05);
 
 	// misc
 
@@ -31,6 +31,8 @@ namespace Math
 	double Sin(double x);
 	float  Tan(float  x);
 	double Tan(double x);
+	float  Cot(float  x);
+	double Cot(double x);
 
 	float  Acos(float  x);
 	double Acos(double x);
@@ -47,6 +49,8 @@ namespace Math
 	double Max(double x, double y);
 	float  Min(float  x, float  y);
 	double Min(double x, double y);
+	float  Avg(float  x, float  y);
+	double Avg(double x, double y);
 }
 
 #endif //!MATH__FUNCTIONS_HPP

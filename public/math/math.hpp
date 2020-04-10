@@ -16,7 +16,7 @@ using FTransform = TTransform<FReal>;
 using FVector2 = TVector2<FReal>;
 using FVector = TVector<FReal>;
 using FPlane = TPlane<FReal>;
-using FQUat = TQuat<FReal>;
+using FQuat = TQuat<FReal>;
 
 
 #endif //!MATH__MATH_HPP

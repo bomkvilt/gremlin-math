@@ -196,7 +196,7 @@ namespace Math
 		{
 			return angle;
 		}
-		return 2 * PI - angle;
+		return 2 * Pi - angle;
 	}
 }
 

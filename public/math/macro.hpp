@@ -2,8 +2,8 @@
 #define MATH__MACRO_HPP
 
 
-#define DEG2RAD(x)	((x * Math::PI ) / 180)
-#define RAD2DEG(x)	((x * 180) / Math::PI )
+#define DEG2RAD(x)	((x * Math::Pi ) / 180)
+#define RAD2DEG(x)	((x * 180) / Math::Pi )
 #define MATH_LIST		, /**/
 #define MATH_STATE		; /**/
 

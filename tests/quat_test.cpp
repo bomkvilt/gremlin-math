@@ -9,10 +9,10 @@ struct quat_tests : public testing::Test
 
 	void Compare(FQuat& l, FQuat r)
 	{
-		EXPECT_NEAR(l.x, r.x, Math::EPSILON);
-		EXPECT_NEAR(l.y, r.y, Math::EPSILON);
-		EXPECT_NEAR(l.z, r.z, Math::EPSILON);
-		EXPECT_NEAR(l.w, r.w, Math::EPSILON);
+		EXPECT_NEAR(l.x, r.x, Math::Epsilon);
+		EXPECT_NEAR(l.y, r.y, Math::Epsilon);
+		EXPECT_NEAR(l.z, r.z, Math::Epsilon);
+		EXPECT_NEAR(l.w, r.w, Math::Epsilon);
 	}
 };
 

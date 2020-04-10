@@ -115,10 +115,10 @@ public: //~~~~~~~~~~~~~~| unary
 public: //~~~~~~~~~~~~~~| equation
 	template<typename Q> bool operator==(const TQuat<Q>& r) const 
 	{ 
-		return Math::Abs(x - r.x) < Math::EPSILON
-			&& Math::Abs(y - r.y) < Math::EPSILON
-			&& Math::Abs(z - r.z) < Math::EPSILON
-			&& Math::Abs(w - r.w) < Math::EPSILON;
+		return Math::Abs(x - r.x) < Math::Epsilon
+			&& Math::Abs(y - r.y) < Math::Epsilon
+			&& Math::Abs(z - r.z) < Math::Epsilon
+			&& Math::Abs(w - r.w) < Math::Epsilon;
 	}
 	template<typename Q> bool operator!=(const TQuat<Q>& r) const { return !(*this == r); }
 
@@ -157,14 +157,14 @@ public: //~~~~~~~~~~~~~~| misc
 		SSQuat result;
 		auto cosTheta = MATH_QUAT_QUAT((*this), r, *, +);
 		auto theta = Math::Acos(cosTheta);
-		if (Math::Abs(theta) < Math::EPSILON)
+		if (Math::Abs(theta) < Math::Epsilon)
 		{
 			result = *this;
 		}
 		else
 		{
 			auto sinTheta = Math::Sqrt(1 - cosTheta * cosTheta);
-			if (Math::Abs(sinTheta) < Math::EPSILON)
+			if (Math::Abs(sinTheta) < Math::Epsilon)
 			{
 				result.w = 0.5f * w + 0.5f * r.w;
 				result.x = x - (r.x - x) * 0.5f;

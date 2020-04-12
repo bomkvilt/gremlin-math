@@ -126,3 +126,16 @@ TEST_F(quat_tests, basisTranslation)
 	auto Q1 = Math::BasisTranslation(x1, x2, z1, z2);
 	Compare(Q0, Q1);
 }
+
+TEST_F(quat_tests, basisTranslation_identity)
+{
+	auto x1 = SVector(0, 0, 1);
+	auto x2 = SVector(1, 0, 0);
+	auto z1 = SVector(0, 0, 1);
+	auto z2 = SVector(1, 0, 0);
+
+	auto Q0 = SQuat::Identity;
+
+	auto Q1 = Math::BasisTranslation(x1, x2, z1, z2);
+	Compare(Q0, Q1);
+}

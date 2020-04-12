@@ -80,10 +80,10 @@ FColor& FColor::operator/=(FReal r) { assert(r); OPERATION_FLOAT(/=, r) return *
 
 bool FColor::operator==(const FColor& r) const
 {
-	return R == r.R
-		&& G == r.G
-		&& B == r.B
-		&& A == r.A;
+	return Math::Abs(R - r.R) < Math::Epsilon
+		&& Math::Abs(G - r.G) < Math::Epsilon
+		&& Math::Abs(B - r.B) < Math::Epsilon
+		&& Math::Abs(A - r.A) < Math::Epsilon;
 }
 
 bool FColor::operator!=(const FColor& r) const

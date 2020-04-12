@@ -81,8 +81,10 @@ public: //--------------| comparement
 	template<typename Q>
 	bool operator==(const TVector2<Q>& r) const
 	{
-		return MATH_VECTOR2_SCALAR((*this), r, == , &);
+		return Math::Abs(x - r.x) < Math::Epsilon
+			&& Math::Abs(y - r.y) < Math::Epsilon;
 	}
+
 	template<typename Q>
 	bool operator!=(const TVector2<Q>& r) const
 	{

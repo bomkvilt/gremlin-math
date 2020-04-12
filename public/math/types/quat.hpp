@@ -252,4 +252,29 @@ template<typename T>
 const TQuat<T> TQuat<T>::Identity = { 0, 0, 0, 1 };
 
 
+namespace Math
+{
+	// finds the quat, that rotates basis x to z
+	// \todo: optimization
+	template<typename T>
+	TQuat<T> BasisTranslation(const TVector<T>& x1, const TVector<T>& x2, const TVector<T>& z1, const TVector<T>& z2)
+	{
+		// first, we rotate x -> y with a way y1 == z1
+		auto& y1 = z1;
+
+		auto n1 = (x1 ^ y1).GetNormal();
+		auto f1 = RAD2DEG(Angle2(x1, y1));
+		auto Q1 = TQuat<T>(n1, f1);
+
+		auto y2 = Q1 * x2;
+
+		// than, we rotate y -> z around y1
+		auto n2 = y1.GetNormal();
+		auto f2 = RAD2DEG(Angle2(y2, z2));
+		auto Q2 = TQuat<T>(n2, f2);
+
+		return Q2 * Q1;
+	}
+}
+
 #endif //!MATH__QUAT_HPP

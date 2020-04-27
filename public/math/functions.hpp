@@ -25,6 +25,26 @@ namespace Math
 	float  Sqrt(float  x);
 	double Sqrt(double x);
 
+	template<typename T, typename R, typename Q>
+	bool Equal(const T& x, const R& y, const Q& delta)
+	{
+		return Abs(x - y) < delta;
+	}
+
+	template<typename T, typename R>
+	bool Equal(const T& x, const R& y)
+	{
+		return Equal(x, y, Epsilon);
+	}
+
+	template<typename T>
+	T Sign(const T& x)
+	{
+		if (x > 0) return +1;
+		if (x < 0) return -1;
+		return 0;
+	}
+
 	float  Cos(float  x);
 	double Cos(double x);
 	float  Sin(float  x);
@@ -45,6 +65,8 @@ namespace Math
 
 	float  Abs(float  x);
 	double Abs(double x);
+	float  Mod(float  x, float  y);
+	double Mod(double x, double y);
 	float  Max(float  x, float  y);
 	double Max(double x, double y);
 	float  Min(float  x, float  y);

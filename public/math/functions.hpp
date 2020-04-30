@@ -75,4 +75,17 @@ namespace Math
 	double Avg(double x, double y);
 }
 
+
+template<typename T> 
+constexpr FReal  DEG2RAD(const T     & x) { return static_cast<FReal >((x * Math::Pi) / 180); }
+constexpr float  DEG2RAD(const float & x) { return static_cast<float >((x * Math::Pi) / 180); }
+constexpr double DEG2RAD(const double& x) { return static_cast<double>((x * Math::Pi) / 180); }
+
+
+template<typename T> 
+constexpr FReal  RAD2DEG(const T     & x) {  return static_cast<FReal >((x * 180) / Math::Pi); }
+constexpr float  RAD2DEG(const float & x) {  return static_cast<float >((x * 180) / Math::Pi); }
+constexpr double RAD2DEG(const double& x) {  return static_cast<double>((x * 180) / Math::Pi); }
+
+
 #endif //!MATH__FUNCTIONS_HPP

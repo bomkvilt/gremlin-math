@@ -192,13 +192,12 @@ namespace Math
 	T Angle2(const TVector<T> a, const TVector<Q> b)
 	{
 		auto cos = Cos(a, b);
-		auto sin = Sin(a, b);
-		auto angle = Acos(cos);
-		if (sin >= 0)
+		auto ang = Acos(Clamp(cos, -1, 1));
+		if ((a ^ b).Sum() >= 0)
 		{
-			return angle;
+			return ang;
 		}
-		return 2 * Pi - angle;
+		return 2 * Pi - ang;
 	}
 }
 

@@ -42,15 +42,15 @@ TEST_F(quat_tests, construction)
 		Compare(whant, probe);
 	}
 	{	// rotation around axis
-		auto c = Math::Cos(DEG2RAD(30));
-		auto s = Math::Sin(DEG2RAD(30));
+		auto c = Math::Cos(DEG2RAD(30.));
+		auto s = Math::Sin(DEG2RAD(30.));
 		auto probe = SQuat({ 0, 0, 1 }, 60);
 		auto whant = SQuat(0, 0, s, c);
 		Compare(whant, probe);
 	}
 	{	// euler angles
-		auto c = Math::Cos(DEG2RAD(30));
-		auto s = Math::Sin(DEG2RAD(30));
+		auto c = Math::Cos(DEG2RAD(30.));
+		auto s = Math::Sin(DEG2RAD(30.));
 		auto probe = SQuat(0, 0, 60);
 		auto whant = SQuat(0, 0, s, c);
 		Compare(whant, probe);

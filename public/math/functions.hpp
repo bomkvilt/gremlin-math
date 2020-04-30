@@ -12,6 +12,11 @@ namespace Math
 	constexpr FReal Pi      = static_cast<FReal>(3.141593);
 	constexpr FReal Epsilon = static_cast<FReal>(1e-05);
 
+	// tags
+	
+	struct EPosAngles {};
+	struct ESignedAngles {};
+
 	// misc
 
 	template<typename T, typename Q>

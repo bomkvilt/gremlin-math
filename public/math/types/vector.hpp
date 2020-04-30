@@ -189,7 +189,7 @@ namespace Math
 	}
 
 	template<typename T, typename Q>
-	T Angle2(const TVector<T> a, const TVector<Q> b)
+	T Angle2(const TVector<T> a, const TVector<Q> b, EPosAngles)
 	{
 		auto cos = Cos(a, b);
 		auto ang = Acos(Clamp(cos, -1, 1));
@@ -198,6 +198,18 @@ namespace Math
 			return ang;
 		}
 		return 2 * Pi - ang;
+	}
+
+	template<typename T, typename Q>
+	T Angle2(const TVector<T> a, const TVector<Q> b, ESignedAngles = {})
+	{
+		auto cos = Cos(a, b);
+		auto ang = Acos(Clamp(cos, -1, 1));
+		if ((a ^ b).Sum() >= 0)
+		{
+			return ang;
+		}
+		return -ang;
 	}
 }
 
